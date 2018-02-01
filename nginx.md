@@ -37,8 +37,7 @@ server {
          include       fastcgi_params;
 
          fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-         fastcgi_pass  127.0.0.1:9000:x
-         ;
+         fastcgi_pass  127.0.0.1:9000;
      }
  }
 ```
