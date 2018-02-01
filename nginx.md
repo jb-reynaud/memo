@@ -31,13 +31,14 @@ server {
          try_files $uri /index.php$is_args$args; # It could be app  "/app_local.php$is_args$args;"
      }
 
-     location ~ ^/app_local\.php(/|$) {
+     location ~ ^/index\.php(/|$) {
          fastcgi_split_path_info ^(.+\.php)(/.*)$;
 
          include       fastcgi_params;
 
          fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-         fastcgi_pass  127.0.0.1:9001;
+         fastcgi_pass  127.0.0.1:9000:x
+         ;
      }
  }
 ```
