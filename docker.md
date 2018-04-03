@@ -30,7 +30,7 @@ docker volume rm $(docker volume ls -q)
 params|values
 ---|---
 url|127.0.0.1
-port|3306
+port|8002
 user|root
 password|MYSQL_ROOT_PASSWORD in `docker-compose.yml`
 
