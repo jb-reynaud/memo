@@ -17,7 +17,7 @@ sudo brew services start nginx
 
 2. Add vhost
 - In `/usr/local/etc/nginx/servers` 
-- or  in `/usr/local/etc/nginx/site_available` with a `ln -s` in `site_enabled
+- or  in `/usr/local/etc/nginx/site_available` with a `ln -s` in `site_enabled`
 
 ```
 server {
@@ -42,7 +42,7 @@ server {
  }
 ```
 
-3. Restart
+3. Reload with new config
 ```bash
 sudo brew services reload nginx
 ```
