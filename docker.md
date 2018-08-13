@@ -1,39 +1,20 @@
 # Docker
 
-## Configuration
-
-- Get Docker Community Edition ([link](https://www.docker.com/get-docker)).
-- Set folder of our project in `Docker > Preferences > File Sharing`.
-
-## Add docker to a symfony project
-
-If it's not already installed, follow https://phpdocker.io/ 
-
-#### Usefull links
-http://blog.joeymasip.com/docker-for-symfony-4/
-
-## Cheats sheet
-
+## Common
 ```bash
-# Start docker
-docker-compose up -d
+# List all containers.
+docker ps -a
 
-# To clear containers/images/volumes
-docker rm -f $(docker ps -a -q)
-docker rmi -f $(docker images -a -q)
-docker volume rm $(docker volume ls -q)
+# Remove all containers.
+docker rmi $(docker images -q) -f
 ```
+## How to...
 
-## How to
+### Start a mysql container
+```bash
+# Start mysql 5.7.
+docker run -p 3306:3306 --name mysql01 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
 
-#### Access mysql in workbench?
-params|values
----|---
-url|127.0.0.1
-port|8002
-user|root
-password|MYSQL_ROOT_PASSWORD in `docker-compose.yml`
-
-## Notes
-
-- [03/04/18] Mysql 8 did not seems to work properly (could not connect, plugin needed), I went back to 5.7.
+# See logs.
+docker logs mysql01
+```
