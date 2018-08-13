@@ -5,6 +5,10 @@
 # List all containers.
 docker ps -a
 
+# Start/stop a container.
+docker start [container_id]
+docker stop [container_id]
+
 # Remove all containers.
 docker rmi $(docker images -q) -f
 ```
